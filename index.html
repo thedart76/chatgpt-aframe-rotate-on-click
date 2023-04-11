@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ChatGPT A-Frame Rotate On Click</title>
+  <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+  <script src="rotate-on-click.js"></script>
+</head>
+
+<body>
+  <a-scene background="#FFFFFF">
+      <a-box class="clickable" color="#FF7700" scale="1 1 0.1" position="-1 1.6 -4"
+        rotate-on-click="axis: 1 0 0; degrees: -180; duration: 500;">
+      </a-box>
+      
+      <a-box class="clickable" color="#0077FF" scale="1 1 0.1" position="1 1.6 -4"
+        rotate-on-click="axis: 0 1 0; degrees: 360; duration: 2000; easing: linear;">
+      </a-box>
+
+    <a-camera>
+      <a-cursor raycaster="objects: .clickable"></a-cursor>
+    </a-camera>
+  </a-scene>
+</body>
+
+</html>
